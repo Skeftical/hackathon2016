@@ -234,10 +234,65 @@
                 // console.log(parseFloat(obj.latitude))
                 jsonArray.push(new google.maps.LatLng(Number(obj.latitude), Number(obj.longitude)));
             });
-            $(".bar-0").append("<span>"+theft_counter+"</span>");
-            $(".bar-1").append("<span>"+assault_counter+"</span>");
-            $(".bar-2").append("<span>"+battery_counter+"</span>");
-            $(".bar-3").append("<span>"+homicide_counter+"</span>");
+
+            // D3
+
+            var dataset = [theft_counter,assault_counter,battery_counter,homicide_counter];
+
+            var idFirstChart = 0;
+            d3.select("#chart-01").selectAll("div")
+                .data(dataset)
+                .enter()
+                .append("div")
+                .attr("class", function(){
+                    var temp = "bar bar-"+idFirstChart;
+                    idFirstChart++;
+                    return temp;
+                })
+                .style("background","cyan")
+                .style("height","24px")
+                .style("margin-bottom","1px")
+                .style("width", function(d) {
+                    var barWidth = d * 0.005;
+                    return barWidth + "px";
+                });
+
+            d3.select("#chart-02").selectAll("div")
+                .data(dataset)
+                .enter()
+                .append("div")
+                .attr("class", "bar")
+                .style("background","red")
+                .style("height","24px")
+                .style("margin-bottom","1px")
+                .style("width", function(d) {
+                    var barWidth = d * 0.005;
+                    return barWidth + "px";
+                });
+
+            d3.select("#chart-03").selectAll("div")
+                .data(dataset)
+                .enter()
+                .append("div")
+                .attr("class", "bar")
+                .style("background","yellow")
+                .style("height","24px")
+                .style("margin-bottom","1px")
+                .style("width", function(d) {
+                    var barWidth = d * 0.005;
+                    return barWidth + "px";
+                });
+
+            // END D3
+
+            $(".bar-0").append("<span class='bar-data'>"+theft_counter+"</span>");
+            $(".bar-1").append("<span class='bar-data'>"+assault_counter+"</span>");
+            $(".bar-2").append("<span class='bar-data'>"+battery_counter+"</span>");
+            $(".bar-3").append("<span class='bar-data'>"+homicide_counter+"</span>");
+
+
+
+
             var pointArray = new google.maps.MVCArray(jsonArray);
             console.log(pointArray);
             heatmap = new google.maps.visualization.HeatmapLayer({
