@@ -237,7 +237,7 @@
 
             // D3
 
-            var dataset = [theft_counter,assault_counter,battery_counter,homicide_counter];
+            var dataset = [theft_counter,assault_counter,battery_counter];
 
             var idFirstChart = 0;
             d3.select("#chart-01").selectAll("div")
@@ -253,7 +253,7 @@
                 .style("height","24px")
                 .style("margin-bottom","1px")
                 .style("width", function(d) {
-                    var barWidth = d * 0.005;
+                    var barWidth = d * 0.0035;
                     return barWidth + "px";
                 });
 
@@ -266,7 +266,7 @@
                 .style("height","24px")
                 .style("margin-bottom","1px")
                 .style("width", function(d) {
-                    var barWidth = d * 0.005;
+                    var barWidth = d * 0.0035;
                     return barWidth + "px";
                 });
 
@@ -279,7 +279,7 @@
                 .style("height","24px")
                 .style("margin-bottom","1px")
                 .style("width", function(d) {
-                    var barWidth = d * 0.005;
+                    var barWidth = d * 0.0035;
                     return barWidth + "px";
                 });
 
@@ -289,9 +289,6 @@
             $(".bar-1").append("<span class='bar-data'>"+assault_counter+"</span>");
             $(".bar-2").append("<span class='bar-data'>"+battery_counter+"</span>");
             $(".bar-3").append("<span class='bar-data'>"+homicide_counter+"</span>");
-
-
-
 
             var pointArray = new google.maps.MVCArray(jsonArray);
             console.log(pointArray);
