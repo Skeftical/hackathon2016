@@ -216,7 +216,7 @@
       //      // this will show the info it in firebug console
       // });
       // Heatmap data: 500 Points
-      
+      var theft_counter = assault_counter = battery_counter = homicide_counter = 0;
       $.ajax({
         url: "all.json",
         type: "GET",
@@ -225,9 +225,18 @@
         dataType: "json",
         success: function (data) {
             $.each(data, function (i, obj) {
-                console.log(parseFloat(obj.latitude))
+                if(obj.primary_type === "THEFT") theft_counter++;
+                if(obj.primary_type === "ASSAULT") assault_counter++;
+                if(obj.primary_type === "BATTERY") battery_counter++;
+                if(obj.primary_type === "HOMICIDE") homicide_counter++;
+                //console.log(obj.primary_type==="THEFT");
+                // console.log(parseFloat(obj.latitude))
                 jsonArray.push(new google.maps.LatLng(parseFloat(obj.latitude), parseFloat(obj.longitude)));
             });
+            $(".bar-0").append("<span>"+theft_counter+"</span>");
+            $(".bar-1").append("<span>"+assault_counter+"</span>");
+            $(".bar-2").append("<span>"+battery_counter+"</span>");
+            $(".bar-3").append("<span>"+homicide_counter+"</span>");
             var pointArray = new google.maps.MVCArray(jsonArray);
             heatmap = new google.maps.visualization.HeatmapLayer({
                 data: pointArray,
@@ -236,6 +245,7 @@
         }
       });
 
+      
 
 
       }
