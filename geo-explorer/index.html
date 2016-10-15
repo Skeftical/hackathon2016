@@ -294,7 +294,11 @@
             console.log(pointArray);
             heatmap = new google.maps.visualization.HeatmapLayer({
                 data: pointArray,
-                map: map
+                map: map,
+                dissipating: true,
+                maxIntensity: 10,
+                radius : 5,
+                opacity: 0.9
             });
         }
       });
