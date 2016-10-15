@@ -50,7 +50,7 @@
 <body class="application">
 
   <div id="app-wrapper">
-    <div id="app-toolbar">
+    <div id="app-toolbar" style="position:static;">
       <form action="" onsubmit="return false;" method="post">
         <div class="row tools">
           <div class="col-sm-2">
@@ -115,14 +115,15 @@
     </div>
 
     </div>
-    <div id="app-sidebar">
+    <div id="app-sidebar" style="margin-top:40px">
 
       <div class="chart-wrapper">
         <div class="chart-title">
           Daily Median Heart Rate
         </div>
         <div class="chart-stage">
-          <div id="chart-01"></div>
+          <div id="chart-01">
+          </div>
         </div>
       </div>
 
@@ -720,5 +721,7 @@
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB37ZoqhUdxa_bJqeHvsR0-bvmjuxxMF18&libraries=visualization&callback=initMap">
     </script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="../assets/js/functions.js"></script>
 </body>
 </html>
