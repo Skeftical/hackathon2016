@@ -7,6 +7,7 @@
   <!--<script>document.write('<script type="text/javascript" src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
   <link rel="stylesheet" type="text/css" href="../assets/lib/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/keen-dashboards.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
 <!--   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.css' rel='stylesheet' />
  -->  <link rel="stylesheet" type="text/css" href="geo-explorer.css" />
       <style>
@@ -89,24 +90,24 @@
             </div>
           </div>
           <div class="col-sm-2">
-            <div class="tool">
+            <div class="tool refresh-options">
               <button id="refresh" class="btn btn-primary btn-block">Refresh</button>
               <button id="refresh" class="btn btn-primary btn-block">Milestones</button>
             </div>
           </div>
            <div class="row tools">
              <div id="floating-panel">
-                 <button onclick="toggleHeatmap()" type="button" class="btn btn-info">Toggle Heatmap</button>
-                 <button onclick="changeGradient()" type="button" class="btn btn-info">Change gradient</button>
-                  <button onclick="changeRadius()" type="button" class="btn btn-info">Change radius</button>
-                <button onclick="changeOpacity()" type="button" class="btn btn-info">Change opacity</button>
+                 <button onclick="toggleHeatmap()" type="button" class="toggleOptions btn btn-info">Toggle Heatmap</button>
+                 <button onclick="changeGradient()" type="button" class="toggleOptions btn btn-info">Change gradient</button>
+                  <button onclick="changeRadius()" type="button" class="toggleOptions btn btn-info">Change radius</button>
+                <button onclick="changeOpacity()" type="button" class="toggleOptions btn btn-info">Change opacity</button>
     </div>
            </div>
         </div>
       </form>
     </div>
 
-    <div id="map">
+    <div class="col-xs-10" id="map">
       <div id="floating-panel">
       <button onclick="toggleHeatmap()">Toggle Heatmap</button>
       <button onclick="changeGradient()">Change gradient</button>
@@ -115,7 +116,7 @@
     </div>
 
     </div>
-    <div id="app-sidebar" style="margin-top:40px">
+    <div class="col-xs-1" id="app-sidebar">
 
       <div class="chart-wrapper">
         <div class="chart-title">
