@@ -225,10 +225,10 @@
         dataType: "json",
         success: function (data) {
             $.each(data, function (i, obj) {
-                console.log(parseFloat(obj.latitude))
-                jsonArray.push(new google.maps.LatLng(parseFloat(obj.latitude), parseFloat(obj.longitude)));
+                jsonArray.push(new google.maps.LatLng(Number(obj.latitude), Number(obj.longitude)));
             });
             var pointArray = new google.maps.MVCArray(jsonArray);
+            console.log(pointArray);
             heatmap = new google.maps.visualization.HeatmapLayer({
                 data: pointArray,
                 map: map
