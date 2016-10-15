@@ -1,117 +1,27 @@
 [
   {
-    "Start Date": "09/11/01",
+    "StartDate": "09/11/01",
     "Milestone": "September 11 Attacks",
     "Location": "United States of America"
   },
   {
-    "Start Date": "06/07/01",
-    "Milestone": "Bush Tax Cuts are Signed into Law",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "10/07/01",
-    "Milestone": "U.S.A. Commences First Attack to Terrorism in Afghanistan",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "03/19/03",
-    "Milestone": "Beginning of the War in Iraq",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "05/28/03",
+    "StartDate": "05/28/03",
     "Milestone": "George W. Bush Authorises $350 Billion Worth of Tax Cuts",
     "Location": "United States of America"
   },
   {
-    "Start Date": "11/02/04",
-    "Milestone": "George W. Bush’s Reelection",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "12/26/04",
-    "Milestone": "Southeast Asian Tsunami",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "08/29/05",
-    "Milestone": "Hurricane Katrina Strikes the Gulf Coast",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "05/01/06",
-    "Milestone": "U.S.A. Immigration Reform Protests",
-    "Location": "Chicago"
-  },
-  {
-    "Start Date": "11/04/08",
+    "StartDate": "11/04/08",
     "Milestone": "Barack Obama’s Victory Speech",
     "Location": "Chicago"
   },
   {
-    "Start Date": "06/11/09",
-    "Milestone": "H1N1 Virus is Deemed a Global Pandemic",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "06/26/10",
+    "StartDate": "06/26/10",
     "Milestone": "City Handgun Ban Overturn",
     "Location": "Chicago"
   },
   {
-    "Start Date": "04/14/11",
-    "Milestone": "Congress Votes for $38 billion Cuts",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "12/15/11",
-    "Milestone": "Iraq War is Declared Over",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "05/18/12",
-    "Milestone": "The 38th G8 Summit Takes Place in Chicago",
-    "Location": "Chicago"
-  },
-  {
-    "Start Date": "10/29/12",
-    "Milestone": "Hurricane Sandy Strikes the New Jersey Coast",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "11/06/12",
-    "Milestone": "Barack Obama’s Reelection",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "04/15/13",
-    "Milestone": "Terrorist Attack at Boston Marathon",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "01/01/14",
+    "StartDate": "01/01/14",
     "Milestone": "Obamacare Goes into Action",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "09/30/14",
-    "Milestone": "First Case of Ebola is Certified in the United States",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "04/25/15",
-    "Milestone": "Riots in Baltimore After the Death of Freddie Gray",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "06/16/15",
-    "Milestone": "Donald Trump announces his nomination for U.S.A. Presidential Elections of 2016",
-    "Location": "United States of America"
-  },
-  {
-    "Start Date": "12/02/15",
-    "Milestone": "Islamic Terrorist Attack in California",
     "Location": "United States of America"
   }
 ]
