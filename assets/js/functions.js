@@ -1,4 +1,4 @@
-var dataset = [1,2,3,4,5 ];
+var dataset = [15,30,45,60,75];
 
 d3.select("#chart-01").selectAll("div")
     .data(dataset)
@@ -6,7 +6,7 @@ d3.select("#chart-01").selectAll("div")
     .append("div")
     .attr("class", "bar")
     .style("background","cyan")
-    .style("height","14px")
+    .style("height","19px")
     .style("margin-bottom","1px")
     .style("width", function(d) {
         var barWidth = d * 5;
@@ -19,7 +19,7 @@ d3.select("#chart-02").selectAll("div")
     .append("div")
     .attr("class", "bar")
     .style("background","red")
-    .style("height","14px")
+    .style("height","19px")
     .style("margin-bottom","1px")
     .style("width", function(d) {
         var barWidth = d * 5;
@@ -32,7 +32,7 @@ d3.select("#chart-03").selectAll("div")
     .append("div")
     .attr("class", "bar")
     .style("background","yellow")
-    .style("height","14px")
+    .style("height","19px")
     .style("margin-bottom","1px")
     .style("width", function(d) {
         var barWidth = d * 5;
