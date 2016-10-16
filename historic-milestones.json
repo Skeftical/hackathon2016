@@ -1,27 +1,34 @@
-[
-  {
-    "StartDate": "09/11/01",
-    "Milestone": "September 11 Attacks",
-    "Location": "United States of America"
-  },
-  {
-    "StartDate": "05/28/03",
-    "Milestone": "George W. Bush Authorises $350 Billion Worth of Tax Cuts",
-    "Location": "United States of America"
-  },
-  {
-    "StartDate": "11/04/08",
-    "Milestone": "Barack Obama’s Victory Speech",
-    "Location": "Chicago"
-  },
-  {
-    "StartDate": "06/26/10",
-    "Milestone": "City Handgun Ban Overturn",
-    "Location": "Chicago"
-  },
-  {
-    "StartDate": "01/01/14",
-    "Milestone": "Obamacare Goes into Action",
-    "Location": "United States of America"
-  }
-]
+{
+  "milestone": [
+    {
+      "year": 2001,
+      "startdate": "09/11/01",
+      "milestone": "September 11 Attacks",
+      "location": "United States of America"
+    },
+    {
+      "year": 2003,
+      "startdate": "05/28/03",
+      "milestone": "George W. Bush Authorises $350 Billion Worth of Tax Cuts",
+      "location": "United States of America"
+    },
+    {
+      "year": 2008,
+      "startdate": "11/04/08",
+      "milestone": "Barack Obama’s Victory Speech in Chicago",
+      "location": "Chicago"
+    },
+    {
+      "year": 2010,
+      "startdate": "06/26/10",
+      "milestone": "Chicago City Handgun Ban Overturn",
+      "location": "Chicago"
+    },
+    {
+      "year": 2014,
+      "startdate": "01/01/14",
+      "milestone": "Obamacare Goes into Action",
+      "location": "United States of America"
+    }
+  ]
+}

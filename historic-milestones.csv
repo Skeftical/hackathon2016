@@ -1,6 +1,6 @@
-StartDate,Milestone,Location
-09/11/01,September 11 Attacks,United States of America
-05/28/03,George W. Bush Authorises $350 Billion Worth of Tax Cuts,United States of America
-11/04/08,Barack Obama’s Victory Speech,Chicago
-06/26/10,City Handgun Ban Overturn,Chicago
-01/01/14,Obamacare Goes into Action,United States of America
+year,startdate,milestone,location
+2001,09/11/01,September 11 Attacks,United States of America
+2003,05/28/03,George W. Bush Authorises $350 Billion Worth of Tax Cuts,United States of America
+2008,11/04/08,Barack Obama’s Victory Speech in Chicago,Chicago
+2010,06/26/10,Chicago City Handgun Ban Overturn,Chicago
+2014,01/01/14,Obamacare Goes into Action,United States of America
