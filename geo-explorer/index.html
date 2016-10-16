@@ -228,31 +228,32 @@
                     return barWidth + "px";
                 });
 
-            d3.select("#chart-02").selectAll("div")
-                .data(dataset)
-                .enter()
-                .append("div")
-                .attr("class", "bar")
-                .style("background","red")
-                .style("height","24px")
-                .style("margin-bottom","1px")
-                .style("width", function(d) {
-                    var barWidth = d * 0.0035;
-                    return barWidth + "px";
-                });
 
-            d3.select("#chart-03").selectAll("div")
-                .data(dataset)
-                .enter()
-                .append("div")
-                .attr("class", "bar")
-                .style("background","yellow")
-                .style("height","24px")
-                .style("margin-bottom","1px")
-                .style("width", function(d) {
-                    var barWidth = d * 0.0035;
-                    return barWidth + "px";
-                });
+            // d3.select("#chart-02").selectAll("div")
+            //     .data(dataset)
+            //     .enter()
+            //     .append("div")
+            //     .attr("class", "bar")
+            //     .style("background","red")
+            //     .style("height","24px")
+            //     .style("margin-bottom","1px")
+            //     .style("width", function(d) {
+            //         var barWidth = d * 0.0035;
+            //         return barWidth + "px";
+            //     });
+
+            // d3.select("#chart-03").selectAll("div")
+            //     .data(dataset)
+            //     .enter()
+            //     .append("div")
+            //     .attr("class", "bar")
+            //     .style("background","yellow")
+            //     .style("height","24px")
+            //     .style("margin-bottom","1px")
+            //     .style("width", function(d) {
+            //         var barWidth = d * 0.0035;
+            //         return barWidth + "px";
+            //     });
 
             // END D3
 
@@ -260,6 +261,17 @@
             $(".bar-1").append("<span class='bar-data'>"+assault_counter+"</span>");
             $(".bar-2").append("<span class='bar-data'>"+battery_counter+"</span>");
             $(".bar-3").append("<span class='bar-data'>"+homicide_counter+"</span>");
+
+
+            $(".bar-0").wrap("<div class='barOne'></div>")
+            $(".bar-1").wrap("<div class='barTwo'></div>")
+            $(".bar-2").wrap("<div class='barThree'></div>")
+            $(".bar-3").wrap("<div class='barFour'></div>")
+
+            $(".barOne").append("<div>Theft</div>");
+            $(".barTwo").append("<div>Assault</div>");
+            $(".barThree").append("<div>Battery</div>");
+
 
             var pointArray = new google.maps.MVCArray(jsonArray);
             console.log(pointArray);
