@@ -343,7 +343,7 @@
           </div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <h4>2001</h4>
+              <h4 id="milestones-year">2001</h4>
             </div>
             <div class="timeline-body">
             </div>
@@ -416,9 +416,6 @@
   </div>
     </div>
 
-
-
-
   <!-- // <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.js"></script> -->
   <script type="text/javascript" src="../assets/lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -432,83 +429,8 @@
   <!-- // <script type="text/javascript" src="geo-explorer.js"></script> -->
    <script>
 
-      // This example requires the Visualization library. Include the libraries=visualization
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
-      var map, heatmap;
-      var points =[];
-      var jsonArray = [];
-      
-
-      function toggleHeatmap() {
-        heatmap.setMap(heatmap.getMap() ? null : map);
-      }
-
-      function changeGradient() {
-        var gradient = [
-          'rgba(0, 255, 255, 0)',
-          'rgba(0, 255, 255, 1)',
-          'rgba(0, 191, 255, 1)',
-          'rgba(0, 127, 255, 1)',
-          'rgba(0, 63, 255, 1)',
-          'rgba(0, 0, 255, 1)',
-          'rgba(0, 0, 223, 1)',
-          'rgba(0, 0, 191, 1)',
-          'rgba(0, 0, 159, 1)',
-          'rgba(0, 0, 127, 1)',
-          'rgba(63, 0, 91, 1)',
-          'rgba(127, 0, 63, 1)',
-          'rgba(191, 0, 31, 1)',
-          'rgba(255, 0, 0, 1)'
-        ]
-        heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
-      }
-
-      function changeRadius() {
-        heatmap.set('radius', heatmap.get('radius') ? null : 20);
-      }
-
-      function changeOpacity() {
-        heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-      }
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: {lat: 41.881832, lng: -87.623177},
-          mapTypeId: 'satellite'
-        });
-
-        
-      
-      // $.getJSON("all.json", function(json) {
-      //    points =json.map(function(obj){
-      //       return new google.maps.LatLng(parseFloat(obj.latitude), parseFloat(obj.longitude));
-      //     });
-      //     heatmap.setData(points);
-      //      // this will show the info it in firebug console
-      // });
-      // Heatmap data: 500 Points
-      var theft_counter = assault_counter = battery_counter = homicide_counter = 0;
-      $.ajax({
-        url: "all.json",
-        type: "GET",
-        data: "",
-        mimeType: "application/json",
-        dataType: "json",
-        success: function (data) {
-            $.each(data, function (i, obj) {
-
-                if(obj.primary_type === "THEFT") theft_counter++;
-                if(obj.primary_type === "ASSAULT") assault_counter++;
-                if(obj.primary_type === "BATTERY") battery_counter++;
-                if(obj.primary_type === "HOMICIDE") homicide_counter++;
-                //console.log(obj.primary_type==="THEFT");
-                // console.log(parseFloat(obj.latitude))
-                jsonArray.push(new google.maps.LatLng(Number(obj.latitude), Number(obj.longitude)));
-            });
-
-            // D3
+    // D3
 
             var dataset = [theft_counter,assault_counter,battery_counter];
 
@@ -575,9 +497,6 @@
             });
         }
       });
-
-      
-
 
       }
       
