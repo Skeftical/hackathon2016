@@ -2,24 +2,24 @@
 <html>
 <head>
   <title>Dashboard Starter UI</title>
-      <meta charset="utf-8">
+  <meta charset="utf-8">
 
   <!--<script>document.write('<script type="text/javascript" src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
   <link rel="stylesheet" type="text/css" href="../assets/lib/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/keen-dashboards.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
 <!--   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.css' rel='stylesheet' />
- -->  <link rel="stylesheet" type="text/css" href="geo-explorer.css" />
-      <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-        width: 68%;
-      }
+-->  <link rel="stylesheet" type="text/css" href="geo-explorer.css" />
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map {
+    height: 100%;
+    width: 68%;
+  }
       /*#floating-panel {
         position: absolute;
         bottom: 10px;
@@ -47,395 +47,434 @@
         padding: 5px;
       }
       .chart-stage{
-  height: 475px;
-  background: #E0E0E0;
-  border-radius: 0px 0px 8px 8px;
-  padding-top: 5px!important;
-}
-  .timeline>li:nth-child(even) {
-    list-style-type: none;
-    position: relative;
-    margin-bottom: 50px;
-    height: 180px;
-    right:-60px;
-}
+        height: 475px;
+        background: #E0E0E0;
+        border-radius: 0px 0px 8px 8px;
+        padding-top: 5px!important;
+      }
+      .timeline>li:nth-child(even) {
+        list-style-type: none;
+        position: relative;
+        margin-bottom: 50px;
+        height: 180px;
+        right:-60px;
+      }
 
-.timeline>li:nth-child(odd) {
-    position: relative;
-    margin-bottom: 50px;
-    height: 180px;
-    left:-120px;
-}
+      .timeline>li:nth-child(odd) {
+        position: relative;
+        margin-bottom: 50px;
+        height: 180px;
+        left:-120px;
+      }
 
-.timeline>li:before,
-.timeline>li:after {
-    content: " ";
-    display: table;
-}
+      .timeline>li:before,
+      .timeline>li:after {
+        content: " ";
+        display: table;
+      }
 
-.timeline>li:after {
-    clear: both;
-    min-height: 170px;
-}
+      .timeline>li:after {
+        clear: both;
+        min-height: 170px;
+      }
 
-.timeline > li .timeline-panel {
-  position: relative;
-  float: left;
-  width: 41%;
-  padding: 0 20px 20px 20px;
-  text-align: right;
-}
+      .timeline > li .timeline-panel {
+        position: relative;
+        float: left;
+        width: 41%;
+        padding: 0 20px 20px 20px;
+        text-align: right;
+      }
 
-.timeline>li .timeline-panel:before {
-    right: auto;
-    left: -15px;
-    border-right-width: 15px;
-    border-left-width: 0;
-}
+      .timeline>li .timeline-panel:before {
+        right: auto;
+        left: -15px;
+        border-right-width: 15px;
+        border-left-width: 0;
+      }
 
-.timeline>li .timeline-panel:after {
-    right: auto;
-    left: -14px;
-    border-right-width: 14px;
-    border-left-width: 0;
-}
+      .timeline>li .timeline-panel:after {
+        right: auto;
+        left: -14px;
+        border-right-width: 14px;
+        border-left-width: 0;
+      }
 
-.timeline>li .timeline-image {
-    z-index: 100;
-    position: absolute;
-    left: 50%;
-    border: 7px solid #3b5998;
-    border-radius: 100%;
-    background-color: #3b5998;
-    box-shadow: 0 0 5px #4582ec;
-    width: 200px;
-    height: 200px;
-    margin-left: -100px;
-}
+      .timeline>li .timeline-image {
+        z-index: 100;
+        position: absolute;
+        left: 50%;
+        border: 7px solid #3b5998;
+        border-radius: 100%;
+        background-color: #3b5998;
+        box-shadow: 0 0 5px #4582ec;
+        width: 200px;
+        height: 200px;
+        margin-left: -100px;
+      }
 
-.timeline>li .timeline-image h4 {
-    margin-top: 12px;
-    font-size: 10px;
-    line-height: 14px;
-}
+      .timeline>li .timeline-image h4 {
+        margin-top: 12px;
+        font-size: 10px;
+        line-height: 14px;
+      }
 
-.timeline>li.timeline-inverted>.timeline-panel {
-    float: right;
-    padding: 0 30px 20px 20px;
-    text-align: left;
-}
+      .timeline>li.timeline-inverted>.timeline-panel {
+        float: right;
+        padding: 0 30px 20px 20px;
+        text-align: left;
+      }
 
-.timeline>li.timeline-inverted>.timeline-panel:before {
-    right: auto;
-    left: -15px;
-    border-right-width: 15px;
-    border-left-width: 0;
-}
+      .timeline>li.timeline-inverted>.timeline-panel:before {
+        right: auto;
+        left: -15px;
+        border-right-width: 15px;
+        border-left-width: 0;
+      }
 
-.timeline>li.timeline-inverted>.timeline-panel:after {
-    right: auto;
-    left: -14px;
-    border-right-width: 14px;
-    border-left-width: 0;
-}
+      .timeline>li.timeline-inverted>.timeline-panel:after {
+        right: auto;
+        left: -14px;
+        border-right-width: 14px;
+        border-left-width: 0;
+      }
 
-.timeline>li:last-child {
-    margin-bottom: 0;
-}
+      .timeline>li:last-child {
+        margin-bottom: 0;
+      }
 
-.timeline .timeline-heading h4 {
-  margin-top:22px;
-    margin-left:-20px;
-    margin-bottom: 4px;
-    padding:0;
-    color: #b3b3b3;
-}
+      .timeline .timeline-heading h4 {
+        margin-top:22px;
+        margin-left:-20px;
+        margin-bottom: 4px;
+        padding:0;
+        color: #b3b3b3;
+      }
 
-.timeline .timeline-heading h4.subheading {
-  margin:0;
-  padding:0;
-    text-transform: none;
-    font-size:18px;
-    color:#333333;
-}
+      .timeline .timeline-heading h4.subheading {
+        margin:0;
+        padding:0;
+        text-transform: none;
+        font-size:18px;
+        color:#333333;
+      }
 
-.timeline .timeline-body>p,
-.timeline .timeline-body>ul {
-    margin-bottom: 0;
-    color:#808080;
-}
-/*Style for even div.line*/
-.timeline>li:nth-child(odd) .line:before {
-    content: "";
-    position: absolute;
-    top: 60px;
-    bottom: 0;
-    left: 690px;
-    width: 4px;
-    height:340px;
-    background-color: #3b5998;
-    -ms-transform: rotate(-44deg); /* IE 9 */
-    -webkit-transform: rotate(-44deg); /* Safari */
-    transform: rotate(-44deg);
-    box-shadow: 0 0 5px #4582ec;
-}
-/*Style for odd div.line*/
-.timeline>li:nth-child(even) .line:before  {
-    content: "";
-    position: absolute;
-    top: 60px;
-    bottom: 0;
-    left: 450px;
-    width: 4px;
-    height:340px;
-    background-color: #3b5998;
-    -ms-transform: rotate(44deg); /* IE 9 */
-    -webkit-transform: rotate(44deg); /* Safari */
-    transform: rotate(44deg);
-    box-shadow: 0 0 5px #4582ec;
-}
-/* Medium Devices, .visible-md-* */
-@media (min-width: 992px) and (max-width: 1199px) {
-  .timeline > li:nth-child(even) {
-    margin-bottom: 0px;
-    min-height: 0px;
-    right: 0px;
-  }
-  .timeline > li:nth-child(odd) {
-    margin-bottom: 0px;
-    min-height: 0px;
-    left: 0px;
-  }
-  .timeline>li:nth-child(even) .timeline-image {
-    left: 0;
-    margin-left: 0px;
-  }
-  .timeline>li:nth-child(odd) .timeline-image {
-    left: 690px;
-    margin-left: 0px;
-  }
-  .timeline > li:nth-child(even) .timeline-panel {
-    width: 76%;
-    padding: 0 0 20px 0px;
-    text-align: left;
-  }
-  .timeline > li:nth-child(odd) .timeline-panel {
-    width: 70%;
-    padding: 0 0 20px 0px;
-    text-align: right;
-  }
-  .timeline > li .line {
-    display: none;
-  }
-}
-/* Small Devices, Tablets */
-@media (min-width: 768px) and (max-width: 991px) {
-  .timeline > li:nth-child(even) {
-    margin-bottom: 0px;
-    min-height: 0px;
-    right: 0px;
-  }
-  .timeline > li:nth-child(odd) {
-    margin-bottom: 0px;
-    min-height: 0px;
-    left: 0px;
-  }
-  .timeline>li:nth-child(even) .timeline-image {
-    left: 0;
-    margin-left: 0px;
-  }
-  .timeline>li:nth-child(odd) .timeline-image {
-    left: 520px;
-    margin-left: 0px;
-  }
-  .timeline > li:nth-child(even) .timeline-panel {
-    width: 70%;
-    padding: 0 0 20px 0px;
-    text-align: left;
-  }
-  .timeline > li:nth-child(odd) .timeline-panel {
-    width: 70%;
-    padding: 0 0 20px 0px;
-    text-align: right;
-  }
-  .timeline > li .line {
-    display: none;
-  }
-}
-/* Custom, iPhone Retina */
-@media only screen and (max-width: 767px) {
-  .timeline > li:nth-child(even) {
-    margin-bottom: 0px;
-    min-height: 0px;
-    right: 0px;
-  }
-  .timeline > li:nth-child(odd) {
-    margin-bottom: 0px;
-    min-height: 0px;
-    left: 0px;
-  }
-  .timeline>li .timeline-image {
-    position: static;
-    width: 150px;
-    height: 150px;
-    margin-bottom:0px;
-  }
-  .timeline>li:nth-child(even) .timeline-image {
-    left: 0;
-    margin-left: 0;
-  }
-  .timeline>li:nth-child(odd) .timeline-image {
-    float:right;
-    left: 0px;
-    margin-left:0;
-  }
-  .timeline > li:nth-child(even) .timeline-panel {
-    width: 100%;
-    padding: 0 0 20px 14px;
-  }
-  .timeline > li:nth-child(odd) .timeline-panel {
-    width: 100%;
-    padding: 0 14px 20px 0px;
-  }
-  .timeline > li .line {
-    display: none;
-  }
-}
+      .timeline .timeline-body>p,
+      .timeline .timeline-body>ul {
+        margin-bottom: 0;
+        color:#808080;
+      }
+      /*Style for even div.line*/
+      .timeline>li:nth-child(odd) .line:before {
+        content: "";
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 690px;
+        width: 4px;
+        height:340px;
+        background-color: #3b5998;
+        -ms-transform: rotate(-44deg); /* IE 9 */
+        -webkit-transform: rotate(-44deg); /* Safari */
+        transform: rotate(-44deg);
+        box-shadow: 0 0 5px #4582ec;
+      }
+      /*Style for odd div.line*/
+      .timeline>li:nth-child(even) .line:before  {
+        content: "";
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 450px;
+        width: 4px;
+        height:340px;
+        background-color: #3b5998;
+        -ms-transform: rotate(44deg); /* IE 9 */
+        -webkit-transform: rotate(44deg); /* Safari */
+        transform: rotate(44deg);
+        box-shadow: 0 0 5px #4582ec;
+      }
+      /* Medium Devices, .visible-md-* */
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .timeline > li:nth-child(even) {
+          margin-bottom: 0px;
+          min-height: 0px;
+          right: 0px;
+        }
+        .timeline > li:nth-child(odd) {
+          margin-bottom: 0px;
+          min-height: 0px;
+          left: 0px;
+        }
+        .timeline>li:nth-child(even) .timeline-image {
+          left: 0;
+          margin-left: 0px;
+        }
+        .timeline>li:nth-child(odd) .timeline-image {
+          left: 690px;
+          margin-left: 0px;
+        }
+        .timeline > li:nth-child(even) .timeline-panel {
+          width: 76%;
+          padding: 0 0 20px 0px;
+          text-align: left;
+        }
+        .timeline > li:nth-child(odd) .timeline-panel {
+          width: 70%;
+          padding: 0 0 20px 0px;
+          text-align: right;
+        }
+        .timeline > li .line {
+          display: none;
+        }
+      }
+      /* Small Devices, Tablets */
+      @media (min-width: 768px) and (max-width: 991px) {
+        .timeline > li:nth-child(even) {
+          margin-bottom: 0px;
+          min-height: 0px;
+          right: 0px;
+        }
+        .timeline > li:nth-child(odd) {
+          margin-bottom: 0px;
+          min-height: 0px;
+          left: 0px;
+        }
+        .timeline>li:nth-child(even) .timeline-image {
+          left: 0;
+          margin-left: 0px;
+        }
+        .timeline>li:nth-child(odd) .timeline-image {
+          left: 520px;
+          margin-left: 0px;
+        }
+        .timeline > li:nth-child(even) .timeline-panel {
+          width: 70%;
+          padding: 0 0 20px 0px;
+          text-align: left;
+        }
+        .timeline > li:nth-child(odd) .timeline-panel {
+          width: 70%;
+          padding: 0 0 20px 0px;
+          text-align: right;
+        }
+        .timeline > li .line {
+          display: none;
+        }
+      }
+      /* Custom, iPhone Retina */
+      @media only screen and (max-width: 767px) {
+        .timeline > li:nth-child(even) {
+          margin-bottom: 0px;
+          min-height: 0px;
+          right: 0px;
+        }
+        .timeline > li:nth-child(odd) {
+          margin-bottom: 0px;
+          min-height: 0px;
+          left: 0px;
+        }
+        .timeline>li .timeline-image {
+          position: static;
+          width: 150px;
+          height: 150px;
+          margin-bottom:0px;
+        }
+        .timeline>li:nth-child(even) .timeline-image {
+          left: 0;
+          margin-left: 0;
+        }
+        .timeline>li:nth-child(odd) .timeline-image {
+          float:right;
+          left: 0px;
+          margin-left:0;
+        }
+        .timeline > li:nth-child(even) .timeline-panel {
+          width: 100%;
+          padding: 0 0 20px 14px;
+        }
+        .timeline > li:nth-child(odd) .timeline-panel {
+          width: 100%;
+          padding: 0 14px 20px 0px;
+        }
+        .timeline > li .line {
+          display: none;
+        }
+      }
     </style>
-</head>
-<body class="application">
+  </head>
+  <body class="application">
 
-  <div id="app-wrapper">
-    <div id="app-toolbar" style="position:static;">
-      <form action="" onsubmit="return false;" method="post">
-        
+    <div id="app-wrapper">
+      <div id="app-toolbar" style="position:static;">
+        <form action="" onsubmit="return false;" method="post">
+          
           <div class="col-sm-2">
             <div class="tool refresh-options">
               <button id="home" class="btn btn-primary btn-block">Home</button>
               <button id="milestones" class="btn btn-primary btn-block">Milestones</button>
             </div>
           </div>
-           <div class="row tools">
+          <div class="row tools">
 
            <div class="col-xs-1" id="app-sidebar">
 
-      <div class="chart-wrapper">
-        <div class="chart-title">
-        Crime Statistics
-        </div>
-        <div class="chart-stage">
-
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Crime Statistics
+              </div>
+              <div class="chart-stage">
+                <div id="chart-01"></div>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
-    </div>
-             
-           </div>
-        </div>
-      </form>
-      <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="text-center">Historic Milestones</h1>
-      <ul class="timeline">
-        <li>
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" src="https://i.imgur.com/7x4GXZt.jpg">
-          </div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 id="milestones-year">2001</h4>
-            </div>
-            <div class="timeline-body">
-            </div>
-          </div>
-          <div class="line"></div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" src="http://i.imgur.com/ZYvBscK.jpg" alt="">
-          </div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4>2003</h4>
-            </div>
-            <div class="timeline-body">
-            </div>
-          </div>
-          <div class="line"></div>
-        </li>
-        <li>
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" src="https://i.imgur.com/cLYUPlm.jpg" alt="">
-          </div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4>2004</h4>
-            </div>
-            <div class="timeline-body">
-            </div>
-          </div>
-          <div class="line"></div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" src="https://i.imgur.com/mjvZaFN.jpg" alt="">
-          </div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4>2010</h4>
+    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Historic Milestones</h1>
+          <ul class="timeline">
+            <li>
+              <div class="timeline-image" id="2001">
+                <img class="img-circle img-responsive" src="https://i.imgur.com/7x4GXZt.jpg">
               </div>
-            <div class="timeline-body">
-            </div>
-          </div>
-          <div class="line"></div>
-        </li>
-        <li>
-          <div class="timeline-image">
-            <img class="img-circle img-responsive" src="https://i.imgur.com/bnZrVli.jpg" alt="">
-          </div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4>2014</h4>
-            </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 id="milestones-year">2001</h4>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+              <div class="line"></div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image" id="bush" >
+                <img class="img-circle img-responsive" src="http://i.imgur.com/ZYvBscK.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>2003</h4>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+              <div class="line"></div>
+            </li>
+            <li>
+              <div class="timeline-image">
+                <img class="img-circle img-responsive" src="https://i.imgur.com/cLYUPlm.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>2004</h4>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+              <div class="line"></div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image">
+                <img class="img-circle img-responsive" src="https://i.imgur.com/mjvZaFN.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>2010</h4>
+                </div>
+                <div class="timeline-body">
+                </div>
+              </div>
+              <div class="line"></div>
+            </li>
+            <li>
+              <div class="timeline-image">
+                <img class="img-circle img-responsive" src="https://i.imgur.com/bnZrVli.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>2014</h4>
+                </div>
 
-            <div class="timeline-body">
-        </div>
+                <div class="timeline-body">
+                </div>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+
+</div>
+<div class="col-xs-1" id="app-sidebar">
+<!-- <div class="chart-wrapper">
+        <div class="chart-title">
+          Crimes Commited in 09h+-1h
+        </div>
+        <div class="chart-stage">
+          <div id="chart-01">
+          </div>
+        </div>
+      </div> -->
+
 </div>
 
-    </div>
-    <div class="col-xs-1" id="app-sidebar">
+</div>
+</div>
 
-    </div>
+<!-- // <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.js"></script> -->
+<script type="text/javascript" src="../assets/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/lib/keen-js/dist/keen.min.js"></script>
+<!--<script type="text/javascript" src="https://d26b395fwzu5fz.cloudfront.net/3.1.0/keen.js?v=20141106"></script>-->
+<script type="text/javascript" src="../assets/js/meta.js"></script>
 
-  </div>
-    </div>
-
-  <!-- // <script type="text/javascript" src="https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.js"></script> -->
-  <script type="text/javascript" src="../assets/lib/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
-  <script type="text/javascript" src="../assets/lib/keen-js/dist/keen.min.js"></script>
-  <!--<script type="text/javascript" src="https://d26b395fwzu5fz.cloudfront.net/3.1.0/keen.js?v=20141106"></script>-->
-  <script type="text/javascript" src="../assets/js/meta.js"></script>
-  
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="../assets/js/functions.js"></script>
-  <!-- // <script type="text/javascript" src="geo-explorer.js"></script> -->
-   <script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="../assets/js/functions.js"></script>
+<!-- // <script type="text/javascript" src="geo-explorer.js"></script> -->
+<script>
 
 
     // D3
 
-            var dataset = [theft_counter,assault_counter,battery_counter];
+    
 
+
+            // D3
+
+    // The ten datasets - Two for each milestone (A month before - A month after)
+    // var dataset1Before = [theft_counter1_before,assault_counter1_before,battery_counter1_before];
+    // var dataset1After = [theft_counter1_after,assault_counter1_after,battery_counter2_after];
+    // var dataset2Before = [theft_counter2_before,assault_counter2_before,battery_counter2_before];
+    // var dataset2After = [theft_counter2_after,assault_counter2_after,battery_counter2_after];
+    // var dataset3Before = [theft_counter3_before,assault_counter3_before,battery_counter3_before];
+    // var dataset3After = [theft_counter3_after,assault_counter3_after,battery_counter3_after];
+    // var dataset4Before = [theft_counter4_befores,assault_counter4_before,battery_counter4_before];
+    // var dataset4After = [theft_counter4_after,assault_counter4_after,battery_counter4_after];
+    // var dataset5Before = [theft_counter5_before,assault_counter5_before,battery_counter5_before];
+    // var dataset5After = [theft_counter5_after,assault_counter5_after,battery_counter5_after];
+
+            var dataset = [20,30];
             var idFirstChart = 0;
-            d3.select("#chart-01").selectAll("div")
+            var bars;
+            function call(dataset){
+              if (bars){
+                console.log("A");
+                bars
+                  .data(dataset)
+                  .enter().append("div");
+
+                bars
+                  .style("width", function (d) {
+                    var barWidth = d * 5;
+                    return barWidth + "px";});
+                bars.exit().remove();
+              }
+              
+              bars = d3.select("#chart-01").selectAll("div")
                 .data(dataset)
                 .enter()
                 .append("div")
@@ -448,61 +487,63 @@
                 .style("height","24px")
                 .style("margin-bottom","1px")
                 .style("width", function(d) {
-                    var barWidth = d * 0.0035;
+                    var barWidth = d * 5;
                     return barWidth + "px";
                 });
-
-            d3.select("#chart-02").selectAll("div")
-                .data(dataset)
-                .enter()
-                .append("div")
-                .attr("class", "bar")
-                .style("background","red")
-                .style("height","24px")
-                .style("margin-bottom","1px")
-                .style("width", function(d) {
-                    var barWidth = d * 0.0035;
-                    return barWidth + "px";
-                });
-
-            d3.select("#chart-03").selectAll("div")
-                .data(dataset)
-                .enter()
-                .append("div")
-                .attr("class", "bar")
-                .style("background","yellow")
-                .style("height","24px")theft
-                .style("margin-bottom","1px")
-                .style("width", function(d) {
-                    var barWidth = d * 0.0035;
-                    return barWidth + "px";
-                });
-
-            // END D3
-
-            $(".bar-0").append("<span class='bar-data'>"+theft_counter+"</span>");
-            $(".bar-1").append("<span class='bar-data'>"+assault_counter+"</span>");
-            $(".bar-2").append("<span class='bar-data'>"+battery_counter+"</span>");
-            $(".bar-3").append("<span class='bar-data'>"+homicide_counter+"</span>");
-
-            var pointArray = new google.maps.MVCArray(jsonArray);
-            console.log(pointArray);
-            heatmap = new google.maps.visualization.HeatmapLayer({
-                data: pointArray,
-                map: map,
-                dissipating: true,
-                maxIntensity: 10,
-                radius : 5,
-                opacity: 0.9
+                
+            }
+            
+            $( "#2001" ).click(function() {
+              call([40,50]);
             });
-        }
-      });
+            $( "#bush" ).click(function() {
+              call([60,50]);
+            });
+            $("#home").click(function(){
+                window.location.href="index.html";
+            });
+            window.onload = call(dataset);
+            // $(".bar-0").append("<span class='bar-data'>"+theft_counter1_before+"</span>");
+            // $(".bar-1").append("<span class='bar-data'>"+theft_counter1_after+"</span>");
+            // $(".bar-2").append("<span class='bar-data'>"+battery_counter1_before+"</span>");
+            // $(".bar-3").append("<span class='bar-data'>"+battery_counter1_after+"</span>");
+            // $(".bar-4").append("<span class='bar-data'>"+homicide_counter1_before+"</span>");
+            // $(".bar-5").append("<span class='bar-data'>"+homicide_counter1_after+"</span>");
+            // $(".bar-6").append("<span class='bar-data'>"+theft_counter2_before+"</span>");
+            // $(".bar-7").append("<span class='bar-data'>"+theft_counter2_after+"</span>");
+            // $(".bar-8").append("<span class='bar-data'>"+battery_counter2_before+"</span>");
+            // $(".bar-9").append("<span class='bar-data'>"+battery_counter2_after+"</span>");
+            // $(".bar-10").append("<span class='bar-data'>"+homicide_counter2_before+"</span>");
+            // $(".bar-11").append("<span class='bar-data'>"+homicide_counter2_after+"</span>");
+            // $(".bar-12").append("<span class='bar-data'>"+theft_counter3_before+"</span>");
+            // $(".bar-13").append("<span class='bar-data'>"+theft_counter3_after+"</span>");
+            // $(".bar-14").append("<span class='bar-data'>"+battery_counter3_before+"</span>");
+            // $(".bar-15").append("<span class='bar-data'>"+battery_counter3_after+"</span>");
+            // $(".bar-16").append("<span class='bar-data'>"+homicide_counter3_before+"</span>");
+            // $(".bar-17").append("<span class='bar-data'>"+homicide_counter3_after+"</span>");
+            // $(".bar-18").append("<span class='bar-data'>"+theft_counter4_before+"</span>");
+            // $(".bar-19").append("<span class='bar-data'>"+theft_counter4_after+"</span>");
+            // $(".bar-20").append("<span class='bar-data'>"+battery_counter4_before+"</span>");
+            // $(".bar-21").append("<span class='bar-data'>"+battery_counter4_after+"</span>");
+            // $(".bar-22").append("<span class='bar-data'>"+homicide_counter4_before+"</span>");
+            // $(".bar-23").append("<span class='bar-data'>"+homicide_counter4_after+"</span>");
+            // $(".bar-24").append("<span class='bar-data'>"+theft_counter5_before+"</span>");
+            // $(".bar-25").append("<span class='bar-data'>"+theft_counter5_after+"</span>");
+            // $(".bar-26").append("<span class='bar-data'>"+battery_counter5_before+"</span>");
+            // $(".bar-27").append("<span class='bar-data'>"+battery_counter5_after+"</span>");
+            // $(".bar-28").append("<span class='bar-data'>"+homicide_counter5_before+"</span>");
+            // $(".bar-29").append("<span class='bar-data'>"+homicide_counter5_after+"</span>");
 
-      }
-      
-    </script>
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB37ZoqhUdxa_bJqeHvsR0-bvmjuxxMF18&libraries=visualization&callback=initMap">
-    </script>
+            $(".bar-0").wrap("<div class='barOne'></div>")
+            $(".bar-1").wrap("<div class='barTwo'></div>")
+            // $(".bar-2").wrap("<div class='barThree'></div>")
+            // $(".bar-3").wrap("<div class='barFour'></div>")
+
+            $(".barOne").append("<div>Before</div>");
+            $(".barTwo").append("<div>After</div>");
+            // $(".barThree").append("<div>Battery</div>");
+
+</script>
+  
 </body>
 </html>
